@@ -1,1 +1,0 @@
-curl -T "{index.js,web.config,process.json,package.json}" ftps://waws-prod-blu-123.ftp.azurewebsites.windows.net/site/wwwroot/ --user eugenode\eugeniomiro

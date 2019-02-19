@@ -23,5 +23,14 @@
   "homepage": "https://github.com/eugeniomiro/eugenode#readme",
   "engines": {
     "node": ">10.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.2",
+    "mongoose": "^5.4.14",
+    "morgan": "^1.9.1"
   }
 }

@@ -1,11 +1,20 @@
-const http = require('http');
+const express    = require('express');
+const morgan     = require('morgan');
+const bodyParser = require('body-parser');
+const mongoose   = require('mongoose');
 
-var server = http.createServer(function(request, response) {
-    response.writeHead(200, {'Content-Type': "text/plain"});
-    response.end("Hello Euge!");
+const app        = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(morgan('dev'));
+
+app.get('/', (req, res, next) => {
+    res.json({ user: 'Eugenio Miró' });
 });
 
-var port = process.env.PORT || 3030;
-server.listen(port);
+let port = process.env.PORT || 3030;
 
-console.log("Server running at port %d", port);
+app.listen(port, err => {
+    console.log("Server running at port %d", port);
+});
