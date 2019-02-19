@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/eugeniomiro/eugenode/issues"
   },
-  "homepage": "https://github.com/eugeniomiro/eugenode#readme"
+  "homepage": "https://github.com/eugeniomiro/eugenode#readme",
+  "engines": {
+    "node": ">10.0.0"
+  }
 }
