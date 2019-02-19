@@ -1,0 +1,23 @@
+{
+  "name": "eugenode",
+  "version": "1.0.0",
+  "description": "First Application in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugeniomiro/eugenode.git"
+  },
+  "keywords": [
+    "node.js",
+    "javascript"
+  ],
+  "author": "Eugenio Miró",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eugeniomiro/eugenode/issues"
+  },
+  "homepage": "https://github.com/eugeniomiro/eugenode#readme"
+}
