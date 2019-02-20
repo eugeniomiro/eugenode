@@ -21,7 +21,7 @@ app.use('/',      indexRouter);
 app.use('/users', usersRouter);
 
 app.use(function(req, res, next) {
-    next(createError(404));
+    next(createErrors(404));
 });
 
 app.use(function(err, req, res, next) {
