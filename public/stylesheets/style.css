@@ -6,3 +6,8 @@ body {
 a {
     color: #00b7ff
 }
+
+label.login {
+    width: 100px;
+    display: inline-block;
+}
