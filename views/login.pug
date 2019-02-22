@@ -1,9 +1,10 @@
 extends layout
-
 block content
     h1 Login to #{title}
     |
     |
+    if sessionFlash && sessionFlash.message 
+        div #{sessionFlash.message}
 
     form(method='post')
         |
