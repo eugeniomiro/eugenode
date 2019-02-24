@@ -5,11 +5,13 @@ const path              = require('path');
 const cookieParser      = require('cookie-parser');
 const passport          = require('passport');
 const flash             = require('connect-flash');
+const config            = require('./config')();
+const configPassport    = require('./config/Passport');
 const indexRouter       = require('./routes/index');
 const usersRouter       = require('./routes/users');
 const loginRouter       = require('./routes/login');
-const configPassport    = require('./config/Passport');
-const app               = express();
+
+var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
