@@ -23,28 +23,34 @@ app.use(cookieParser());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/',      indexRouter);
-app.use('/users', usersRouter);
-app.use('/login', loginRouter);
-
 configPassport(passport);
 
 app.use(passport.initialize());
-app.post('/login', passport.authenticate('local', { successRedirect: '/',
-                                                    failureRedirect: '/login',
-                                                    failureFlash: true }));
 
-
-app.use(function(req, res, next) {
-    next(createErrors(404));
+app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
 });
 
-app.use(function(err, req, res, next) {
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err: {};
+module.exports = function(attachDb) {    
+    app.use('/',        attachDb, indexRouter);
+    app.use('/users',   attachDb, usersRouter);
+    app.use('/login',   attachDb, loginRouter);
+    
+    app.post('/login', attachDb, passport.authenticate('local', { successRedirect: '/',
+                                                                  failureRedirect: '/login',
+                                                                  failureFlash: true }));
+    app.use(function(req, res, next) {
+        next(createErrors(404));
+    });
 
-    res.status(err.status || 500);
-    res.render('error');
-});
+    app.use(function(err, req, res, next) {
+        res.locals.message = err.message;
+        res.locals.error = req.app.get('env') === 'development' ? err: {};
 
-module.exports = app;
+        res.status(err.status || 500);
+        res.render('error');
+    });
+
+    return app;
+}
