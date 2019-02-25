@@ -11,6 +11,7 @@ const configPassport    = require('./config/Passport');
 const indexRouter       = require('./routes/index');
 const usersRouter       = require('./routes/users');
 const loginRouter       = require('./routes/login');
+const Admin             = require('./controllers/Admin');
 
 var app = express();
 
@@ -43,6 +44,9 @@ module.exports = function(attachDb) {
     app.use('/',        attachDb, indexRouter);
     app.use('/users',   attachDb, usersRouter);
     app.use('/login',   attachDb, loginRouter);
+    app.all('/admin*',  attachDb, function(req, res, next) {
+        Admin.run(req, res, next);
+    });
     app.use(function(req, res, next) {
         next(createErrors(404));
     });
