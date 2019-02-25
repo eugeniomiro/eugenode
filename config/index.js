@@ -14,7 +14,7 @@ var config = {
     production: {
         mode: 'production',
         logging: 'common',
-        mongoDbUrl: 'mongodb://eugenode-shard-00-00-rsezi.azure.mongodb.net:27017/eugenode'
+        mongoDbUrl: process.env.MONGO_CONNECTION
         // port should be set by environment vars
     }
 };
