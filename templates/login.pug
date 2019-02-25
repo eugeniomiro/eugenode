@@ -3,9 +3,10 @@ block content
     h1 Login to #{title}
     |
     |
-    if sessionFlash && sessionFlash.message 
-        div #{sessionFlash.message}
-
+    for message in errors
+        p= message
+    |
+    |
     form(method='post')
         |
         |

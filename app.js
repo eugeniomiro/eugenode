@@ -1,5 +1,6 @@
 const createErrors      = require('http-errors');
 const express           = require('express');
+const session           = require('express-session');
 const logger            = require('morgan');
 const path              = require('path');
 const cookieParser      = require('cookie-parser');
@@ -10,12 +11,16 @@ const configPassport    = require('./config/Passport');
 const indexRouter       = require('./routes/index');
 const usersRouter       = require('./routes/users');
 const loginRouter       = require('./routes/login');
+const Admin             = require('./controllers/Admin');
 
 var app = express();
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'templates'));
 app.set('view engine', 'pug');
 
+app.use(session(
+    { secret: "thesecret123451234", resave: false, saveUninitialized: true }
+));
 app.use(logger(config.logging));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,6 +32,9 @@ configPassport(passport);
 
 app.use(passport.initialize());
 
+app.post('/login',  passport.authenticate('local', { successRedirect: '/',
+                                                     failureRedirect: '/login',
+                                                     failureFlash: true }));
 app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
@@ -36,10 +44,9 @@ module.exports = function(attachDb) {
     app.use('/',        attachDb, indexRouter);
     app.use('/users',   attachDb, usersRouter);
     app.use('/login',   attachDb, loginRouter);
-    
-    app.post('/login', attachDb, passport.authenticate('local', { successRedirect: '/',
-                                                                  failureRedirect: '/login',
-                                                                  failureFlash: true }));
+    app.all('/admin*',  attachDb, function(req, res, next) {
+        Admin.run(req, res, next);
+    });
     app.use(function(req, res, next) {
         next(createErrors(404));
     });
