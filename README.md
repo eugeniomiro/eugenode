@@ -6,3 +6,5 @@ First Application in Node.js
 
 Very important Info about deployment [here](https://code.visualstudio.com/tutorials/nodejs-deployment/deploy-website)
 
+[eugenode wiki](https://github.com/eugeniomiro/eugenode/wiki)
+[Azure portal](https://portal.azure.com)
