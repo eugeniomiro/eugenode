@@ -11,3 +11,18 @@ label.login {
     width: 100px;
     display: inline-block;
 }
+
+footer {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: rgb(230, 222, 227)
+}
+
+footer div {
+    padding-bottom: 5px;
+}
+
+footer a {
+    color: rgb(107, 98, 98);
+    margin: 0 15px 0 0
+}
