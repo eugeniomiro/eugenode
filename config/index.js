@@ -20,5 +20,6 @@ var config = {
 };
 
 module.exports = function(mode) {
-    return config[mode || process.argv[2] || process.env.NODE_ENV] || config.local;
+    let processExists = process.argv[2] != null;
+    return config[mode || processExists || process.env.NODE_ENV] || config.local;
 }
