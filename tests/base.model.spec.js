@@ -1,5 +1,5 @@
 var Model = require('../models/Base');
-    dbMockup = {};
+var dbMockup = {};
 
 describe("Models", function() {
     it("should create a new model", function(next) {

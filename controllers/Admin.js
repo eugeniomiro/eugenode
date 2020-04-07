@@ -1,5 +1,5 @@
 var BaseController = require('./Base');
-    View = require('../views/Base');
+var View = require('../views/Base');
 
 module.exports = BaseController.extend({
     name: 'Admin',
