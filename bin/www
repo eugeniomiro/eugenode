@@ -10,7 +10,9 @@ var debug       = require('debug')('eugexpress:server');
 var http        = require('http');
 var MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect(config.mongoDbUrl, { useNewUrlParser: true }, function(err, db) {
+MongoClient.connect(config.mongoDbUrl, 
+                    { useNewUrlParser: true, useUnifiedTopology: true },
+                    function(err, db) {
   if (err) {
     console.log('Sorry, there was an error connecting to the database.' + err);
     app = app(function(req, res, next) {

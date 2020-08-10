@@ -20,5 +20,12 @@ var config = {
 };
 
 module.exports = function(mode) {
-    return config[mode || process.argv[2] || process.env.NODE_ENV] || config.local;
+    let argvSanitizer = () => {
+        for (let c in config) {
+            if (c.mode === process.argv[2]) 
+                return c.mode;
+        }
+        return null;
+    };
+    return config[mode || argvSanitizer() || process.env.NODE_ENV] || config.local;
 }

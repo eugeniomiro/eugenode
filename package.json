@@ -1,6 +1,6 @@
 {
   "name": "eugenode",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "First Application in Node.js",
   "main": "./bin/www",
   "scripts": {
@@ -25,19 +25,22 @@
     "node": ">10.0.0"
   },
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "acorn": ">=5.7.4",
+    "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.4.4",
+    "cookie-parser": "^1.4.5",
     "debug": "^4.1.1",
-    "express": "^4.16.4",
-    "express-session": "^1.15.6",
-    "http-errors": "^1.7.2",
-    "mongodb": "^3.1.13",
-    "mongoose": "^5.4.14",
-    "morgan": "^1.9.1",
-    "passport": "^0.4.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "http-errors": "^1.7.3",
+    "kind-of": ">=6.0.3",
+    "mongodb": "^3.5.5",
+    "mongoose": ">=5.7.5",
+    "morgan": "^1.10.0",
+    "npm": "^6.14.7",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "pug": "^2.0.3",
-    "underscore": "^1.9.1"
+    "pug": "^2.0.4",
+    "underscore": "^1.10.2"
   }
 }
