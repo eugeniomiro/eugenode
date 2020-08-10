@@ -11,7 +11,7 @@ var http        = require('http');
 var MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect(config.mongoDbUrl, 
-                    { useNewUrlParser: true },
+                    { useNewUrlParser: true, useUnifiedTopology: true },
                     function(err, db) {
   if (err) {
     console.log('Sorry, there was an error connecting to the database.' + err);
