@@ -42,5 +42,9 @@
     "passport-local": "^1.0.0",
     "pug": "^3.0.1",
     "underscore": "^1.12.1"
+  },
+  "devDependencies": {
+    "jasmine": "^3.7.0",
+    "jasmine-node": "^3.0.0"
   }
 }
