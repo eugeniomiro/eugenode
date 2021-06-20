@@ -5,7 +5,9 @@
   "main": "./bin/www",
   "scripts": {
     "test": "jasmine-node ./tests",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test:standard": "standard",
+    "test:standard:fix": "standard --fix"
   },
   "repository": {
     "type": "git",
