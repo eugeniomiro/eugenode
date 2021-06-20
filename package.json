@@ -45,6 +45,12 @@
   "devDependencies": {
     "jasmine": "^3.7.0",
     "jasmine-node": "^3.0.0",
-    "mongoose": "^5.12.13"
+    "mongoose": "^5.12.13",
+    "standard": "^16.0.3"
+  },
+  "standard": {
+    "env": [
+      "jasmine"
+    ]
   }
 }
