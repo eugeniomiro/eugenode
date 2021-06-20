@@ -29,7 +29,7 @@ However, there are a couple of things you can do to make life easier for the mai
 
 ### 1. Prepare your environment
 
-You need [Node.JS](http://nodejs.org) and [npm](https://docs.npmjs.com/getting-started/installing-node)
+You need [Node.JS](http://nodejs.org) (10.12.0 or greater is required by **standard**) and [npm](https://docs.npmjs.com/getting-started/installing-node)
 
 ### 2. Install dependencies
 
