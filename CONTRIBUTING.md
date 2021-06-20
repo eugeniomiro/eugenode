@@ -41,7 +41,7 @@ $ npm install
 
 ### 3. Run tests ###
 
-All tests are located in the `test` folder (which contains the [Jasmine-Node](https://github.com/mhevery/jasmine-node) tests).
+All tests are located in the `test` folder (which contains the [Jasmine](https://jasmine.github.io/) tests).
 
 ```console
 $ npm test 
