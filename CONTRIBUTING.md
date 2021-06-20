@@ -63,10 +63,8 @@ $ npm run test:standard:fix
 
 ### 5. Documentation/Wiki ###
 
-This doesn´t exist yet, but is work in progress! 
-
 ```console
-$ git clone https://github.com/eugeniomiro/eugenode.wiki.git
+$ git clone https://github.com/eugeniomiro/eugenode/wiki.git
 ```
 
 And then make and commit your changes
