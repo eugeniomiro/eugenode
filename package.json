@@ -41,7 +41,7 @@
     "npm": "^10.5.2",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "pug": "^3.0.2",
+    "pug": "^3.0.3",
     "underscore": "^1.13.3"
   },
   "devDependencies": {
